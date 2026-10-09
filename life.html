@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Life — Lawrence Zhou</title>
+  <meta name="description" content="Lawrence Zhou — math and physics research." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='4' fill='%231A1915'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <style>
+    main.gallery-page { max-width: 1100px; margin: 0 auto; padding: calc(var(--nav-h) + 3rem) 1.5rem 5rem; }
+    /* Masonry: CSS columns stack photos of different heights with no gaps */
+    .gallery { columns: 3 260px; column-gap: 14px; }
+    .gallery figure {
+      break-inside: avoid; margin-bottom: 14px; cursor: zoom-in;
+      opacity: 0; transform: translateY(14px);
+      transition: opacity .6s ease, transform .6s ease;
+    }
+    .gallery figure.visible { opacity: 1; transform: none; }
+    .gallery img { width: 100%; display: block; transition: filter .3s ease; }
+    .gallery figure:hover img { filter: brightness(.92); }
+    .gallery figcaption { font-family: var(--f-mono); font-size: .64rem; color: var(--ink-3); margin-top: .4rem; }
+
+    /* Lightbox */
+    #lightbox {
+      position: fixed; inset: 0; z-index: 2000;
+      background: rgba(245,244,240,.96);
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      opacity: 0; pointer-events: none; transition: opacity .25s ease;
+    }
+    #lightbox.open { opacity: 1; pointer-events: auto; }
+    #lb-img { max-width: min(90vw, 1000px); max-height: 80vh; box-shadow: 0 20px 60px rgba(26,25,21,.2); }
+    #lb-cap { font-family: var(--f-mono); font-size: .68rem; color: var(--ink-2); margin-top: 1rem; }
+    .lb-btn { position: fixed; background: none; border: none; font-size: 1.2rem; color: var(--ink-2); padding: 1rem; cursor: pointer; }
+    .lb-btn:hover { color: var(--ink); }
+    #lb-close { top: .5rem; right: .5rem; }
+    #lb-prev { left: .5rem; top: 50%; } #lb-next { right: .5rem; top: 50%; }
+    @media (prefers-reduced-motion: reduce) { .gallery figure { opacity: 1; transform: none; } }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a class="nav-name" href="index.html">Lawrence Zhou</a>
+      <ul class="nav-links">
+        <li><a href="index.html">about</a></li>
+        <li><a href="philosophy.html">philosophy</a></li>
+        <li><a href="blog.html">blog</a></li>
+        <li><a href="life.html" class="active">life</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="gallery-page">
+    <div class="label">
+      <span>life</span>
+      <button class="text-btn" id="shuffle-photos">shuffle</button>
+    </div>
+    <div class="gallery" id="gallery"></div>
+  </main>
+
+  <div id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer">
+    <button class="lb-btn" id="lb-close" aria-label="Close">✕</button>
+    <button class="lb-btn" id="lb-prev" aria-label="Previous">←</button>
+    <button class="lb-btn" id="lb-next" aria-label="Next">→</button>
+    <img id="lb-img" src="" alt="" />
+    <p id="lb-cap"></p>
+  </div>
+
+  <script src="js/life.js"></script>
+</body>
+</html>
