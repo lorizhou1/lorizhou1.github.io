@@ -38,7 +38,7 @@ a:hover { text-decoration-color: var(--ink); }
 nav {
   position: fixed; top: 0; left: 0; right: 0;
   height: var(--nav-h);
-  background: rgba(245, 244, 240, 0.85);
+  background: rgba(232, 232, 232, 0.85);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--rule);
