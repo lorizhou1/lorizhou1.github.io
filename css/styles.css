@@ -4,11 +4,11 @@
 
 /* Design tokens: change these to re-theme the whole site */
 :root {
-  --bg:     #F5F4F0;   /* warm off-white page */
-  --ink:    #1A1915;   /* main text */
-  --ink-2:  #5C5A52;   /* secondary text */
-  --ink-3:  #9A978C;   /* faint text (years, labels) */
-  --rule:   #DDDAD0;   /* thin divider lines */
+  --bg:     #E8E8E8;   /* warm off-white page */
+  --ink:    #000000;   /* main text */
+  --ink-2:  #000000;   /* secondary text */
+  --ink-3:  #000000;   /* faint text (years, labels) */
+  --rule:   #000000;   /* thin divider lines */
   --f-sans: 'Inter', system-ui, sans-serif;
   --f-mono: 'IBM Plex Mono', ui-monospace, monospace;
   --nav-h:  56px;
