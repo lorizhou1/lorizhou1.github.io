@@ -4,7 +4,7 @@
 // Put images in assets/photos/ and add one line per photo.
 // Caption is optional: leave it as '' for none.
 const PHOTOS = [
-  { file: 'photo-01.jpg', caption: 'caption here' },
+  { file: 'photo-01.jpg', caption: '' },
   { file: 'photo-02.jpg', caption: '' },
   { file: 'photo-03.jpg', caption: '' },
   { file: 'photo-04.jpg', caption: '' },
