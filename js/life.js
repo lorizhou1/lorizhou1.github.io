@@ -16,6 +16,8 @@ const PHOTOS = [
   { file: 'photo-10.jpg', caption: '' },
   { file: 'photo-11.jpg', caption: '' },
   { file: 'photo-12.jpg', caption: '' },
+  { file: 'photo-13.jpg', caption: '' },
+  { file: 'photo-14.jpg', caption: '' },
 ];
 const src = f => 'assets/photos/' + encodeURIComponent(f);
 
